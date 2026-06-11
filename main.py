@@ -21,7 +21,6 @@ app = FastAPI()
 # In[3]:
 
 
-# 4 dosyayı yükle (API başlarken bir kez çalışır)
 imp             = joblib.load("model/imputer.pkl")
 scaler          = joblib.load("model/scaler.pkl")
 feature_columns = joblib.load("model/feature_columns.pkl")
@@ -34,7 +33,7 @@ model           = load_model("model/titanic_model.h5")
 class Yolcu(BaseModel):
     Pclass: int
     Sex: str
-    Age: float = None    # None olabilir — eksik veri gelebilir
+    Age: float = None   
     SibSp: int
     Parch: int
     Fare: float = None
